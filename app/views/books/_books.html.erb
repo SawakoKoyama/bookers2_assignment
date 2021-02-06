@@ -1,5 +1,5 @@
 <h2>User Info</h2>
-<%= attachment_image_tag user, :profile_image, :fill, 40, 40, fallback: "no-image.jpg"%>
+<%= attachment_image_tag user, :profile_image, size: "60x60", fallback: "no-image.jpg"%>
   <table class="table">
     <tbody>
       <tr></tr>
@@ -23,15 +23,11 @@
   <%= form_with model:book, local:true do |f| %>
     <div class="form-group">
       <label for="book_title">Title</label>
-        <div>
-          <%= f.text_field :title %>
-        </div>
+        <%= f.text_field :title, class: "form-control" %>
     </div>
     <div class="form-group">
       <label for="book_opinion">Opinion</label>
-        <div>
-          <%= f.text_area :body %>
-        </div>
+          <%= f.text_area :body, class: "form-control" %>
     </div>
     <div class="form-group">
         <%= f.submit 'Create Book', class: "btn btn-success"%>
